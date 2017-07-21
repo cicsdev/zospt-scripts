@@ -1,0 +1,20 @@
+#!/bin/bash -
+
+
+# Licensed Materials - Property of IBM
+#
+# SAMPLE
+#
+# (c) Copyright IBM Corp. 2017 All Rights Reserved
+#
+# US Government Users Restricted Rights - Use, duplication or
+# disclosure restricted by GSA ADP Schedule Contract with IBM Corp
+
+
+# Ensure that zospt and find-old-containers are on your PATH
+export PATH="/u/chpoole/bin/:$PATH"
+
+# My zospt password is contained here
+. $HOME/.bashrc
+
+zospt ps -a | tail -n +7 | find-old-containers 3 | xargs -n1 zospt rm -f

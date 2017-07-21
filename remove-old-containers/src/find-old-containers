@@ -1,0 +1,38 @@
+#!/usr/bin/perl
+
+# Find Old Containers
+# ===================
+#
+# Takes the output of `zospt ps` as its input, and returns a list of container names
+# older than `$days`.
+
+
+# Licensed Materials - Property of IBM
+#
+# SAMPLE
+#
+# (c) Copyright IBM Corp. 2017 All Rights Reserved
+#
+# US Government Users Restricted Rights - Use, duplication or
+# disclosure restricted by GSA ADP Schedule Contract with IBM Corp
+
+
+use Time::Local;
+
+# Show containers older than this number of days
+$days = defined $ARGV[0] ? $ARGV[0] : 3;
+$seconds_per_day = 86400;
+
+while (my $line = <STDIN>) {
+  my @fields = split ' ', $line;
+
+  my @time_date = split /[-T:]/, $fields[3];
+  if (abs(time()-seconds_since_epoch(@time_date)) > ($days*$seconds_per_day)) {
+    print $fields[0] . "\n";
+  }
+}
+
+sub seconds_since_epoch {
+  (my $year, my $month, my $day, my $hours, my $min, my $sec) = @_;
+  timelocal($sec, $min, $hours, $day, $month-1, $year);
+}
