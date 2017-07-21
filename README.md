@@ -2,7 +2,7 @@
 Example scripts to enhance the functionality of [z/OS Provisioning Toolkit][zospt], to
 show how easy it is to integrate into a wider system.
 
-## `remove-old-versions`
+## `remove-old-containers`
 Find and remove any `zospt` containers older than _x_ days.
 
 ## License
