@@ -1,8 +1,8 @@
 # Remove Old Containers
 
 Find and remove any `zospt` containers older than _x_
-days. A [perl script](../src/find-old-containers) can return `zospt` containers older
-than _x_ days. A [shell script](../src/remove-old-containers) is provided to collect all
+days. A [perl script](src/find-old-containers) can return `zospt` containers older
+than _x_ days. A [shell script](src/remove-old-containers) is provided to collect all
 existing containers, find the old ones, and remove them.
 
 Read the [full blog post][blog] for further detail, and the JCL to use to schedule the
