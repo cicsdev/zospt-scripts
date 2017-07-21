@@ -1,4 +1,4 @@
-# Scripting with z/OS Provisioning Toolkit: Remove Old Containers
+# Scripting with z/OS Provisioning Toolkit: Removing Old Containers
 
 A few months ago we delivered [z/OS Provisioning Toolkit][zospt], allowing you to bring
 up CICS regions in minutes, and purge them just as quickly. Being a command that's run
