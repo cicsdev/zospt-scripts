@@ -5,12 +5,13 @@ up CICS regions in minutes, and purge them just as quickly. Being a command that
 from USS---from a shell---z/OS PT is easy to use as part of a more complicated script. In
 this short example, we're going to write a script to be able to remove all containers in
 the system older than _x_ days. This can then be scheduled to run every night, to ensure
-developers don't leave their CICS regions sat around unnecessarily. Treat your z/OS
-PT-created CICS regions like livestock, not pets, remember. All source code for this
-example is on [CICSDev on GitHub][gh].
+developers don't leave their CICS regions (or any other container contents) sat around
+unnecessarily. Treat your z/OS PT-created CICS regions like livestock, not pets,
+remember. All source code for this example is on [CICSDev on GitHub][gh].
 
-I've started by provisioning myself a CICS TS V5.3 region. I can see this region, and in
-fact any region I---_chpoole_---own (running or not), using the `zospt ps -a` command:
+I've started by provisioning myself a CICS TS V5.3 region in a container. I can see this
+container, and in fact any container I---_chpoole_---own (running or not), using the
+`zospt ps -a` command:
 
 ```bash
 > zospt ps -a
